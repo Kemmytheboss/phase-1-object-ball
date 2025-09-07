@@ -167,9 +167,24 @@ function playerNumbers(teamName) {
     }
   }
   return [];
-  
+
 }
 function playerStats(playerName) {
   const players = allPlayers();
   return players[playerName] || null;
+}
+
+function bigShoeRebounds() {
+  const players = allPlayers();
+  let biggestShoe = -Infinity;
+  let rebounds = 0;
+
+  for (let player in players) {
+    if (players[player].shoe > biggestShoe) {
+      biggestShoe = players[player].shoe;
+      rebounds = players[player].rebounds;
+    }
+  }
+
+  return rebounds;
 }

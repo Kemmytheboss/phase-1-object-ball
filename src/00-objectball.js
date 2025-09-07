@@ -118,17 +118,22 @@ function gameObject() {
 }
 console.log(gameObject());
 
+//This function avoids repitition to nested iteratons
+function allPlayers(){
+  const game = gameobject();
+  return {...game.home.players, ...game.away.players};
+}
 // building functions to query the object
 // numPointScored(playerName). Takes the string of players name then retuns the points scored by the player
 function numPointScored(playerName){
-    const game = gameObject();
-    for (const teamKey in game){
-        const players =game[gameKey].players;
-        if(playerName in players){
-            return players[playerName].points;
-        }
+    const players = allPlayers();
+    return players[playerName]?.points  || null;
     }
-    return null;
-}
-console.log(numPointsScored("Ben Gordon")); 
+  
 
+
+//shoeSize(playerName). Should take the name of the player and return their shoe size
+function shoeSize(playerName){
+  const players = allPlayers();
+  return players[playerName]?.shoe  || null;
+}

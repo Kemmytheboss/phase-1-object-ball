@@ -120,7 +120,7 @@ console.log(gameObject());
 
 //This function avoids repitition to nested iteratons
 function allPlayers(){
-  const game = gameobject();
+  const game = gameObject();
   return {...game.home.players, ...game.away.players};
 }
 // building functions to query the object
@@ -136,4 +136,14 @@ function numPointScored(playerName){
 function shoeSize(playerName){
   const players = allPlayers();
   return players[playerName]?.shoe  || null;
+}
+
+//teamcolors(teamName)
+function teamcolors(teamName){
+  const gmae = gameObject();
+  for(let key in game){
+    if (game[key].teamName ===teamName){
+      return game[key].colors;
+    }
+  }
 }

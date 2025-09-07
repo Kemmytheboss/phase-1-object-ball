@@ -129,7 +129,7 @@ function numPointScored(playerName){
     const players = allPlayers();
     return players[playerName]?.points  || null;
     }
-  
+  console.log(numPointsScored("Ben Gordon"));
 
 
 //shoeSize(playerName). Should take the name of the player and return their shoe size
@@ -137,6 +137,7 @@ function shoeSize(playerName){
   const players = allPlayers();
   return players[playerName]?.shoe  || null;
 }
+console.log(shoeSize("Brook Lopez"));
 
 //teamcolors(teamName)
 function teamcolors(teamName){
@@ -147,6 +148,7 @@ function teamcolors(teamName){
     }
   }
 }
+console.log(teamColors("Brooklyn Nets"));
 
 //teamNames function
 function playerNumbers(teamName) {
@@ -158,6 +160,7 @@ function playerNumbers(teamName) {
   }
   return [];
 }
+console.log(teamNames());
 
 function playerNumbers(teamName) {
   const game = gameObject();
@@ -169,11 +172,16 @@ function playerNumbers(teamName) {
   return [];
 
 }
+console.log(playerNumbers("Charlotte Hornets"));
+
+
 function playerStats(playerName) {
   const players = allPlayers();
   return players[playerName] || null;
 }
+console.log(playerStats("Alan Anderson"));
 
+//bonus
 function bigShoeRebounds() {
   const players = allPlayers();
   let biggestShoe = -Infinity;
@@ -188,6 +196,8 @@ function bigShoeRebounds() {
 
   return rebounds;
 }
+console.log(bigShoeRebounds());
+
 
 function mostPointsScored() {
   const players = allPlayers();
@@ -203,6 +213,7 @@ function mostPointsScored() {
 
   return topPlayer;
 }
+console.log(mostPointsScored());
 
 function winningTeam() {
   const game = gameObject();
@@ -212,12 +223,15 @@ function winningTeam() {
 
   return homePoints > awayPoints ? game.home.teamName : game.away.teamName;
 }
+console.log(winningTeam());
 
 function playerWithLongestName() {
   const players = Object.keys(allPlayers());
   return players.reduce((longest, current) => current.length > longest.length ? current : longest, "");
 }
+console.log(playerWithLongestName());
 
+//superbonus
 function doesLongNameStealATon() {
   const players = allPlayers();
   const longestName = playerWithLongestName();
@@ -234,3 +248,4 @@ function doesLongNameStealATon() {
 
   return longestName === bestStealer;
 }
+console.log(doesLongNameStealATon());

@@ -116,3 +116,19 @@ function gameObject() {
     },
   };
 }
+console.log(gameObject());
+
+// building functions to query the object
+// numPointScored(playerName). Takes the string of players name then retuns the points scored by the player
+function numPointScored(playerName){
+    const game = gameObject();
+    for (const teamKey in game){
+        const players =game[gameKey].players;
+        if(playerName in players){
+            return players[playerName].points;
+        }
+    }
+    return null;
+}
+console.log(numPointsScored("Ben Gordon")); 
+

@@ -147,3 +147,24 @@ function teamcolors(teamName){
     }
   }
 }
+
+//teamNames function
+function playerNumbers(teamName) {
+  const game = gameObject();
+  for (let key in game) {
+    if (game[key].teamName === teamName) {
+      return Object.values(game[key].players).map(player => player.number);
+    }
+  }
+  return [];
+}
+
+function playerNumbers(teamName) {
+  const game = gameObject();
+  for (let key in game) {
+    if (game[key].teamName === teamName) {
+      return Object.values(game[key].players).map(player => player.number);
+    }
+  }
+  return [];
+}

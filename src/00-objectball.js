@@ -203,3 +203,12 @@ function mostPointsScored() {
 
   return topPlayer;
 }
+
+function winningTeam() {
+  const game = gameObject();
+
+  const homePoints = Object.values(game.home.players).reduce((sum, p) => sum + p.points, 0);
+  const awayPoints = Object.values(game.away.players).reduce((sum, p) => sum + p.points, 0);
+
+  return homePoints > awayPoints ? game.home.teamName : game.away.teamName;
+}

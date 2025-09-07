@@ -188,3 +188,18 @@ function bigShoeRebounds() {
 
   return rebounds;
 }
+
+function mostPointsScored() {
+  const players = allPlayers();
+  let maxPoints = -Infinity;
+  let topPlayer = '';
+
+  for (let player in players) {
+    if (players[player].points > maxPoints) {
+      maxPoints = players[player].points;
+      topPlayer = player;
+    }
+  }
+
+  return topPlayer;
+}

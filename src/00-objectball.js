@@ -217,3 +217,20 @@ function playerWithLongestName() {
   const players = Object.keys(allPlayers());
   return players.reduce((longest, current) => current.length > longest.length ? current : longest, "");
 }
+
+function doesLongNameStealATon() {
+  const players = allPlayers();
+  const longestName = playerWithLongestName();
+
+  let mostSteals = -Infinity;
+  let bestStealer = '';
+
+  for (let player in players) {
+    if (players[player].steals > mostSteals) {
+      mostSteals = players[player].steals;
+      bestStealer = player;
+    }
+  }
+
+  return longestName === bestStealer;
+}

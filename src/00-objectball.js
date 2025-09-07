@@ -212,3 +212,8 @@ function winningTeam() {
 
   return homePoints > awayPoints ? game.home.teamName : game.away.teamName;
 }
+
+function playerWithLongestName() {
+  const players = Object.keys(allPlayers());
+  return players.reduce((longest, current) => current.length > longest.length ? current : longest, "");
+}

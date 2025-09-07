@@ -167,4 +167,9 @@ function playerNumbers(teamName) {
     }
   }
   return [];
+  
+}
+function playerStats(playerName) {
+  const players = allPlayers();
+  return players[playerName] || null;
 }
